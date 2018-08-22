@@ -1,0 +1,14 @@
+library(tidyverse)
+library(scholar)
+library(xtable)
+my_pubs <- get_publications(id = "LxGAurUAAAAJ&hl")
+
+?get_publications
+
+str_glue("{my_pubs$author} ({my_pubs$year}) {my_pubs$title} {my_pubs$journal}")
+
+it
+my_pubs %>%
+  select(author, year, title, journal)
+  xtable() %>%
+  print.xtable(comment = F)
